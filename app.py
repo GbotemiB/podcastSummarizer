@@ -93,7 +93,7 @@ st.sidebar.markdown("**Note**: Podcast should be less then 45mins. Processing ca
 
 if process_button:
     output = process_podcast_info(url, '/content/podcast/')
-    podcast_info = output['podcast_details']
+    selected_podcast = output['podcast_details']
 
     image_url = selected_podcast['podcast_details']['episode_image']
     st.markdown(f"# {selected_podcast['podcast_details']['podcast_title']}")
