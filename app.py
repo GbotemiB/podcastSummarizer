@@ -1,4 +1,5 @@
 import streamlit as st
+from st_on_hover_tabs import on_hover_tabs
 import json
 import os
 import modal
@@ -10,7 +11,7 @@ def process_podcast_info(url, path):
     return output
 
 # Set the page title and icon
-st.set_page_config(page_title="Podcast Summary App", page_icon="🎙️")
+st.set_page_config(page_title="Podcast Summary App", page_icon="🎙️", layout="wide")
 
 # Top bar section
 st.title("🚀 Podcast Summary App")
@@ -20,16 +21,23 @@ st.markdown("---")
 # st.image("path_to_your_logo.png", use_container_width=True)
 
 # Contact information
-st.subheader("📧 Contact Us")
-st.write("📧 Email: contact@example.com")
-st.write("📞 Phone: +1234567890")
-st.markdown("---")
+col1, col2 = st.columns([7, 7])
 
-# GitHub link
-github_link = "https://github.com/yourusername/your-repo"
-github_icon = "🔗 [GitHub Repository](" + github_link + ")"
-st.subheader("GitHub Repository")
-st.write(github_icon)
+with col1:
+    # Display the podcast episode summary
+    st.subheader("📧 Contact Us")
+    st.write("📧 Email: contact@example.com")
+    st.write("📞 Phone: +1234567890")
+    st.markdown("[![Repo](https://badgen.net/badge/icon/GitHub?icon=github&label)](https://github.com/gbotemiB)") 
+    st.markdown("[![Repo](https://badgen.net/badge/icon/twitter?icon=twitter&label)](https://twitter.com/_oluwagbotty)") 
+
+with col2:
+    # Display the podcast episode summary
+    github_link = "https://github.com/yourusername/your-repo"
+    github_icon = "🔗 [GitHub Repository](" + github_link + ")"
+    st.subheader("GitHub Repository")
+    st.write(github_icon)
+
 st.markdown("---")
 
 # Load podcast details
@@ -81,7 +89,7 @@ st.sidebar.subheader("Add and Process New Podcast Feed")
 url = st.sidebar.text_input("Link to RSS Feed")
 
 process_button = st.sidebar.button("Process Podcast Feed")
-st.sidebar.markdown("**Note**: Podcast processing can take up to 5 mins, please be patient.")
+st.sidebar.markdown("**Note**: Podcast should be less then 45mins. Processing can take up to 5 mins, please be patient.")
 
 if process_button:
     output = process_podcast_info(url, '/content/podcast/')
