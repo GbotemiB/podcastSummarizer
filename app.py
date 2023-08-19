@@ -56,32 +56,32 @@ st.sidebar.subheader("Available Podcasts Feeds")
 selected_podcast_title = st.sidebar.selectbox("Select Podcast Title", list(podcast_data.keys()))
 
 # Display selected podcast details
-if selected_podcast_title:
-    selected_podcast = podcast_data[selected_podcast_title]
+# if selected_podcast_title:
+#     selected_podcast = podcast_data[selected_podcast_title]
     
-    # Display podcast title and image in the same row using Markdown
-    image_url = selected_podcast['podcast_details']['episode_image']
-    st.markdown(f"# {selected_podcast['podcast_details']['podcast_title']}")
+#     # Display podcast title and image in the same row using Markdown
+#     image_url = selected_podcast['podcast_details']['episode_image']
+#     st.markdown(f"# {selected_podcast['podcast_details']['podcast_title']}")
 
-    col1, col2 = st.columns([7, 3])
+#     col1, col2 = st.columns([7, 3])
 
-    with col1:
-            # Display the podcast episode summary
-            st.subheader("Podcast Episode Summary")
-            st.write(selected_podcast['podcast_summary'])
+#     with col1:
+#             # Display the podcast episode summary
+#             st.subheader("Podcast Episode Summary")
+#             st.write(selected_podcast['podcast_summary'])
 
-    with col2:
-        # Display the podcast cover image
-        st.image(selected_podcast['podcast_details']['episode_image'], caption="Podcast Cover", width=300, use_column_width=True)
+#     with col2:
+#         # Display the podcast cover image
+#         st.image(selected_podcast['podcast_details']['episode_image'], caption="Podcast Cover", width=300, use_column_width=True)
         
-    st.subheader("Podcast Guest Information:")
-    st.write(selected_podcast['podcast_guest'])
+#     st.subheader("Podcast Guest Information:")
+#     st.write(selected_podcast['podcast_guest'])
         
-    st.subheader("Podcast Highlights:")
-    st.write(selected_podcast['podcast_highlights'])
+#     st.subheader("Podcast Highlights:")
+#     st.write(selected_podcast['podcast_highlights'])
         
-    st.subheader("Podcast Chapters:")
-    st.write(selected_podcast['podcast_chapters'])
+#     st.subheader("Podcast Chapters:")
+#     st.write(selected_podcast['podcast_chapters'])
 
 # User Input box in the sidebar
 st.sidebar.subheader("Add and Process New Podcast Feed")
@@ -116,3 +116,31 @@ if process_button:
         
     st.subheader("Podcast Chapters:")
     st.write(output['podcast_chapters'])
+
+else:
+    if selected_podcast_title:
+        selected_podcast = podcast_data[selected_podcast_title]
+        
+        # Display podcast title and image in the same row using Markdown
+        image_url = selected_podcast['podcast_details']['episode_image']
+        st.markdown(f"# {selected_podcast['podcast_details']['podcast_title']}")
+
+        col1, col2 = st.columns([7, 3])
+
+        with col1:
+                # Display the podcast episode summary
+                st.subheader("Podcast Episode Summary")
+                st.write(selected_podcast['podcast_summary'])
+
+        with col2:
+            # Display the podcast cover image
+            st.image(selected_podcast['podcast_details']['episode_image'], caption="Podcast Cover", width=300, use_column_width=True)
+            
+        st.subheader("Podcast Guest Information:")
+        st.write(selected_podcast['podcast_guest'])
+            
+        st.subheader("Podcast Highlights:")
+        st.write(selected_podcast['podcast_highlights'])
+            
+        st.subheader("Podcast Chapters:")
+        st.write(selected_podcast['podcast_chapters'])
