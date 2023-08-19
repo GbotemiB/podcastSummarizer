@@ -10,7 +10,7 @@ def process_podcast_info(url, path):
     return output
 
 # Set the page title and icon
-st.set_page_config(page_title="Podcast Summary App", page_icon="🎙️", layout="wide", theme="dark")
+st.set_page_config(page_title="Podcast Summary App", page_icon="🎙️", layout="wide")
 
 st.markdown(
     """
