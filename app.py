@@ -12,19 +12,6 @@ def process_podcast_info(url, path):
 # Set the page title and icon
 st.set_page_config(page_title="Podcast Summary App", page_icon="🎙️", layout="wide")
 
-st.markdown(
-    """
-    <style>
-        body {
-            background-color: #f5f5f5; /* Set your preferred background color */
-            color: #333333; /* Set your preferred text color */
-        }
-        
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
 # Top bar section
 st.title("🎙️ Podcast Summary App")
 st.markdown("---")
@@ -47,9 +34,7 @@ st.sidebar.subheader("Available Podcasts Feeds")
 
 # Select podcast title to view podcast details (in the sidebar)
 # selected_podcast_title = st.sidebar.selectbox("Select Podcast Title", list(podcast_data.keys()))
-selected_podcast_title = st.sidebar.selectbox("Select Podcast Title", ["" ] + list(podcast_data.keys()))
-
-
+selected_podcast_title = st.sidebar.selectbox("Select Podcast Title", ["Home"] + list(podcast_data.keys()))
 
 # User Input box in the sidebar
 st.sidebar.subheader("Add and Process New Podcast Feed")
@@ -59,7 +44,7 @@ process_button = st.sidebar.button("Process Podcast Feed")
 st.sidebar.markdown("**Note**: Podcast should be less then 45mins. Processing can take up to 5 mins, please be patient.")
 
 # Home page (default content)
-if not selected_podcast_title and not process_button:
+if selected_podcast_title == "Home": #and not process_button:
     st.title("Welcome to the Podcast Summary App")
     st.write("The Podcast Summary App allows you to explore podcast details and summaries in an interactive and user-friendly way. Whether you're a podcast enthusiast, a content creator, or just curious about the latest episodes, this app has you covered.")
     st.write("### Features:")
