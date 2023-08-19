@@ -88,31 +88,34 @@ if not selected_podcast_title and not process_button:
     st.markdown("---")
 else:
     if process_button:
-        output = process_podcast_info(url, '/content/podcast/')
-        selected_podcast = output['podcast_details']
+        try:
+            output = process_podcast_info(url, '/content/podcast/')
+            selected_podcast = output['podcast_details']
 
-        image_url = selected_podcast['episode_image']
-        st.markdown(f"# {selected_podcast['podcast_title']}")
+            image_url = selected_podcast['episode_image']
+            st.markdown(f"# {selected_podcast['podcast_title']}")
 
-        col1, col2 = st.columns([7, 3])
+            col1, col2 = st.columns([7, 3])
 
-        with col1:
-            # Display the podcast episode summary
-            st.subheader("Podcast Episode Summary")
-            st.write(output['podcast_summary'])
+            with col1:
+                # Display the podcast episode summary
+                st.subheader("Podcast Episode Summary")
+                st.write(output['podcast_summary'])
 
-        with col2:
-            # Display the podcast cover image
-            st.image(selected_podcast['episode_image'], caption="Podcast Cover", width=300, use_column_width=True)
-            
-        st.subheader("Podcast Guest Information:")
-        st.write(output['podcast_guest'])
-            
-        st.subheader("Podcast Highlights:")
-        st.write(output['podcast_highlights'])
-            
-        st.subheader("Podcast Chapters:")
-        st.write(output['podcast_chapters'])
+            with col2:
+                # Display the podcast cover image
+                st.image(selected_podcast['episode_image'], caption="Podcast Cover", width=300, use_column_width=True)
+                
+            st.subheader("Podcast Guest Information:")
+            st.write(output['podcast_guest'])
+                
+            st.subheader("Podcast Highlights:")
+            st.write(output['podcast_highlights'])
+                
+            st.subheader("Podcast Chapters:")
+            st.write(output['podcast_chapters'])
+        except:
+            st.write("System is running into error. Please wait a few mins then try again.")
 
     else:
         if selected_podcast_title:
