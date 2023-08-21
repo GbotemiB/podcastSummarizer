@@ -55,7 +55,7 @@ if selected_podcast_title == "Home": #and not process_button:
     st.write("1. Use the sidebar on the left to select a processed podcast from the available options. Click on 'select podcast title' and choose from the list.")
     st.write("2. The main content area will display the selected podcast's details, including episode summary, guest information, highlights, and chapters.")
     st.write("3. If you want to add and process a new podcast feed, enter the RSS feed link in the sidebar and click 'Process Podcast Feed.'")
-    st.write("Feel free to explore and enjoy the podcasting experience!")
+    st.write("Find the rss to your favorite podcast at [ListenNotes](https://listennotes.com). Feel free to explore and enjoy the podcasting experience!")
     st.markdown("---")
     st.write("**Note:** Podcast processing can take some time, so please be patient after clicking the 'Process Podcast Feed' button. If you have any questions or need assistance, don't hesitate to reach out using the contact information provided.")
     st.subheader("📧 Contact Details ")
