@@ -8,6 +8,8 @@ The Podcast Summary App is a web application that allows users to explore podcas
 
 The app is built using a combination of Google Colab, Modal Labs, and Streamlit. The language model for podcast processing was developed using Google Colab, and the backend is hosted on Modal Labs. Streamlit is used for the frontend interface.
 
+To access the live app, visit https://podcastsummarizer-corise.streamlit.app/
+
 ## Features
 
 - **Podcast Exploration:** Easily select from a list of available podcast feeds to view detailed information about episodes.
