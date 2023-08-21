@@ -1,6 +1,6 @@
 # Podcast Summary App
 
-![App Screenshot](screenshot.png)
+![Animated GIF](/images/demo.gif)
 
 ## Overview
 
