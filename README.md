@@ -26,6 +26,8 @@ To set up the Podcast Summary App locally, follow these steps:
 3. Install the required dependencies:  `pip install -r requirements`
 
 4. Run the app: `streamlit run app.py`
+   
+5. Instructions on the process for the app are included in `Podcast_Summarizer.ipynb`
 
 
 ## How to Use
